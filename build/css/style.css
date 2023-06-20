@@ -1641,7 +1641,7 @@ button,
 }
 
 .step__wrapper--select input[type=checkbox]:checked + label::before {
-  background: #383838 url("../../img/svg/checkbox-mark.svg") center no-repeat;
+  background: #383838 url("../img/svg/checkbox-mark.svg") center no-repeat;
 }
 
 .step__wrapper input[type=radio]:checked + label {
@@ -1756,7 +1756,7 @@ button,
 }
 
 .option.checked::before {
-  background: #383838 url("../../img/svg/checkbox-mark.svg") center no-repeat;
+  background: #383838 url("../img/svg/checkbox-mark.svg") center no-repeat;
 }
 
 /* @mixin hover-focus {
