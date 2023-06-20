@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Quiz">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="./fonts/Onest-Medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/Onest-Regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/Onest-Medium.woff" type="font/woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/Onest-Regular.woff" type="font/woff" as="font" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="container"></div>
+    </header>
+    <main>
+      <section class="quiz">
+        <div class="container">
+          <div class="quiz__intro">
+            <h1>Подберём вуз мечты</h1>
+            <p>Ответьте на 8 простых вопросов, и мы составим список наболее подходящих для вас вузов</p>
+            <img src="./img/first-screen-bg.png" alt="Бесплатно. За 30 секунд.">
+          </div>
+          <div class="quiz__form">
+            <form action="https://echo.htmlacademy.ru/" method="post">
+              <fieldset class="quiz__step step is-active">
+                <div class="step__heading">
+                  <h2>Для кого вы ищете учебное заведение?</h2>
+                  <p class="step__count"></p>
+                </div>
+                <div class="step__wrapper step__wrapper--2col" data-radio-wrapper>
+                  <input class="visually-hidden" type="radio" name="for_whom" value="me" id="me">
+                  <label for="me">Себе</label>
+                  <input class="visually-hidden" type="radio" name="for_whom" value="spouse" id="spouse">
+                  <label for="spouse">Супругу/супруге</label>
+                  <input class="visually-hidden" type="radio" name="for_whom" value="relative" id="relative">
+                  <label for="relative">Родственнику</label>
+                  <input class="visually-hidden" type="radio" name="for_whom" value="coworker" id="coworker">
+                  <label for="coworker">Коллеге</label>
+                  <input class="visually-hidden" type="radio" name="for_whom" value="child" id="child">
+                  <label for="child">Ребенку</label>
+                  <input class="visually-hidden" type="radio" name="for_whom" value="other" id="other">
+                  <label for="other">Другое</label>
+                </div>
+                <div class="step__btns">
+                  <button type="button" class="btn btn--next" disabled data-btn-next>
+                    <span>Далее</span>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-next"></use>
+                    </svg>
+                  </button>
+                </div>
+              </fieldset>
+              <fieldset class="quiz__step step">
+                <div class="step__heading">
+                  <h2>В каком городе планируете поступать?</h2>
+                  <p class="step__count"></p>
+                </div>
+                <div class="step__wrapper step__wrapper--select" data-select-wrapper>
+                  <input type="text" name="city" id="city" data-select readonly>
+                  <label for="city">Город</label>
+                  <div class="select__options">
+                    <div class="option">Санкт-Петербург</div>
+                    <div class="option">Москва</div>
+                    <div class="option">Новосибирск</div>
+                    <div class="option">Нижний Новгород</div>
+                    <div class="option">Ростов-на-Дону</div>
+                    <div class="option">Екатеринбург</div>
+                    <div class="option">Краснодар</div>
+                  </div>
+                </div>
+                <div class="step__btns">
+                  <button type="button" class="btn btn--prev" data-btn-prev>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-prev"></use>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button type="button" class="btn btn--next" disabled data-btn-next>
+                    <span>Далее</span>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-next"></use>
+                    </svg>
+                  </button>
+                </div>
+              </fieldset>
+              <fieldset class="quiz__step step">
+                <div class="step__heading">
+                  <h2>Какое образование уже есть?</h2>
+                  <p class="step__count"></p>
+                </div>
+                <div class="step__wrapper step__wrapper--2col" data-radio-wrapper>
+                  <input class="visually-hidden" type="radio" name="education" value="basic-general" id="basic-general">
+                  <label for="basic-general">9 классов</label>
+                  <input class="visually-hidden" type="radio" name="education" value="college" id="college">
+                  <label for="college">Колледж/техникум</label>
+                  <input class="visually-hidden" type="radio" name="education" value="secondary-general"
+                    id="secondary-general">
+                  <label for="secondary-general">11 классов</label>
+                  <input class="visually-hidden" type="radio" name="education" value="secondary-vocational"
+                    id="secondary-vocational">
+                  <label for="secondary-vocational">Училище</label>
+                  <input class="visually-hidden" type="radio" name="education" value="incomplete-higher"
+                    id="incomplete-higher">
+                  <label for="incomplete-higher">Неоконченное высшее</label>
+                  <input class="visually-hidden" type="radio" name="education" value="higher" id="higher">
+                  <label for="higher">Высшее</label>
+                </div>
+                <div class="step__btns">
+                  <button type="button" class="btn btn--prev" data-btn-prev>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-prev"></use>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button type="button" class="btn btn--next" disabled data-btn-next>
+                    <span>Далее</span>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-next"></use>
+                    </svg>
+                  </button>
+                </div>
+              </fieldset>
+              <fieldset class="quiz__step step">
+                <div class="step__heading">
+                  <h2>Куда планируете поступать?</h2>
+                  <p class="step__count"></p>
+                </div>
+                <div class="step__wrapper step__wrapper--1col" data-radio-wrapper>
+                  <input class="visually-hidden" type="radio" name="edu-type" value="university" id="type-university">
+                  <label for="type-university">Вуз</label>
+                  <input class="visually-hidden" type="radio" name="edu-type" value="college" id="type-college">
+                  <label for="type-college">Колледж/техникум</label>
+                  <input class="visually-hidden" type="radio" name="edu-type" value="school" id="type-school">
+                  <label for="type-school">Училище</label>
+                </div>
+                <div class="step__btns">
+                  <button type="button" class="btn btn--prev" data-btn-prev>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-prev"></use>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button type="button" class="btn btn--next" disabled data-btn-next>
+                    <span>Далее</span>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-next"></use>
+                    </svg>
+                  </button>
+                </div>
+              </fieldset>
+              <fieldset class="quiz__step step">
+                <div class="step__heading">
+                  <h2>Какую форму обучения предпочитаете?</h2>
+                  <p class="step__count"></p>
+                </div>
+                <div class="step__wrapper step__wrapper--1col" data-radio-wrapper>
+                  <input class="visually-hidden" type="radio" name="edu-form" value="full-time" id="full-time">
+                  <label for="full-time">Очную</label>
+                  <input class="visually-hidden" type="radio" name="edu-form" value="extramural" id="extramural">
+                  <label for="extramural">Заочную</label>
+                  <input class="visually-hidden" type="radio" name="edu-form" value="remote" id="remote">
+                  <label for="remote">Дистанционную</label>
+                </div>
+                <div class="step__btns">
+                  <button type="button" class="btn btn--prev" data-btn-prev>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-prev"></use>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button type="button" class="btn btn--next" disabled data-btn-next>
+                    <span>Далее</span>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-next"></use>
+                    </svg>
+                  </button>
+                </div>
+              </fieldset>
+              <fieldset class="quiz__step step">
+                <div class="step__heading">
+                  <h2>Рассматриваете платное обучение?</h2>
+                  <p class="step__count"></p>
+                </div>
+                <div class="step__wrapper step__wrapper--1col" data-radio-wrapper>
+                  <input class="visually-hidden" type="radio" name="paid" value="paid-no" id="paid-no">
+                  <label for="paid-no">Нет, только бюджет</label>
+                  <input class="visually-hidden" type="radio" name="paid" value="paid-yes" id="paid-yes">
+                  <label for="paid-yes">Да, планирую учиться платно</label>
+                  <input class="visually-hidden" type="radio" name="paid" value="paid-both" id="paid-both">
+                  <label for="paid-both">Возможны оба варианта</label>
+                </div>
+                <div class="step__btns">
+                  <button type="button" class="btn btn--prev" data-btn-prev>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-prev"></use>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button type="button" class="btn btn--next" disabled data-btn-next>
+                    <span>Далее</span>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-next"></use>
+                    </svg>
+                  </button>
+                </div>
+              </fieldset>
+              <fieldset class="quiz__step step">
+                <div class="step__heading">
+                  <h2>Какая специальность интересует?</h2>
+                  <p class="step__count"></p>
+                </div>
+                <div class="step__wrapper step__wrapper--select" data-select-wrapper>
+                  <input type="text" name="major" id="major" data-select readonly>
+                  <label for="city">Специальность</label>
+                  <div class="select__options">
+                    <div class="option">Любая</div>
+                    <div class="option">Экономика</div>
+                    <div class="option">Философия</div>
+                    <div class="option">Социология</div>
+                    <div class="option">Юриспруденция</div>
+                    <div class="option">Екатеринбург</div>
+                    <div class="option">Менеджмент</div>
+                  </div>
+                </div>
+                <div class="step__btns">
+                  <button type="button" class="btn btn--prev" data-btn-prev>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-prev"></use>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button type="button" class="btn btn--next" disabled data-btn-next>
+                    <span>Далее</span>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-next"></use>
+                    </svg>
+                  </button>
+                </div>
+              </fieldset>
+              <fieldset class="quiz__step step">
+                <div class="step__heading">
+                  <h2>Как скоро планируете поступать?</h2>
+                  <p class="step__count"></p>
+                </div>
+                <div class="step__wrapper step__wrapper--2col" data-radio-wrapper>
+                  <input class="visually-hidden" type="radio" name="urgency" value="urgent" id="urgent">
+                  <label for="urgent">Как можно быстрее</label>
+                  <input class="visually-hidden" type="radio" name="urgency" value="month" id="month">
+                  <label for="month">Месяц</label>
+                  <input class="visually-hidden" type="radio" name="urgency" value="quarter" id="quarter">
+                  <label for="quarter">Квартал</label>
+                  <input class="visually-hidden" type="radio" name="urgency" value="half-year" id="half-year">
+                  <label for="half-year">Полгода</label>
+                  <input class="visually-hidden" type="radio" name="urgency" value="year" id="year">
+                  <label for="year">Год</label>
+                </div>
+                <div class="step__btns">
+                  <button type="button" class="btn btn--prev" data-btn-prev>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-prev"></use>
+                    </svg>
+                    <span>Назад</span>
+                  </button>
+                  <button type="button" class="btn btn--next" disabled data-btn-next>
+                    <span>Далее</span>
+                    <svg width="8" height="13" fill="currentColor">
+                      <use xlink:href="./img/sprite.svg#arrow-next"></use>
+                    </svg>
+                  </button>
+                </div>
+              </fieldset>
+              <fieldset class="quiz__step step">
+                <div class="step__heading">
+                  <h2>Ваша подборка готова! &#129395; Куда нам отправить её?</h2>
+                  <p class="step__count"></p>
+                </div>
+                <div class="step__wrapper step__wrapper--1col" data-radio-wrapper>
+                  <input type="text" name="username" id="username" placeholder="Как вас зовут?" required>
+                  <input type="tel" name="tel" id="tel" placeholder="Номер телефона" pattern="^[ 0-9]+$" required>
+                  <input type="email" name="email" id="email" placeholder="E-mail" required>
+                </div>
+                <div class="step__btns">
+                  <button type="submit" class="btn btn--submit">
+                    <span>Получить подборку</span>
+                  </button>
+                </div>
+                <p class="step__agreement">Нажимая на кнопку, вы даете согласие на обработку своих <a
+                    href="#">Персональных данных</a></p>
+              </fieldset>
+              <fieldset class="quiz__step step step-success">
+                <p class="step__count"></p>
+                <p>Отлично, спасибо!</p>
+                <span>Мы отправили подборку вам на почту.
+                  Если подборка не приходит — проверьте спам, возможно, она попала туда.</span>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container"></div>
+    </footer>
+  </div>
+
+  <!-- Модалки -->
+  <div class="modal modal--preload" data-modal="feedback">
+    <div class="modal__wrapper">
+      <div class="modal__overlay" data-close-modal></div>
+      <div class="modal__content">
+        <p class="modal__description">Обычная модалка</p>
+        <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
+          <svg width="15" height="15">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal--preload modal--fit-content modal--no-scale" data-modal="success">
+    <div class="modal__wrapper">
+      <div class="modal__overlay" data-close-modal></div>
+      <div class="modal__content">
+        <p class="modal__description">Размер этой модалки зависит от ширины контента,<br> отключена анимация-скейл</p>
+        <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
+          <svg width="15" height="15">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
