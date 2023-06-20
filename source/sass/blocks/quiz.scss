@@ -1,0 +1,50 @@
+:root {
+  counter-reset: number;
+}
+
+.quiz {
+  padding: 40px;
+
+  .container {
+    background-color: $color-reef;
+    display: flex;
+
+    &>div {
+      width: 50%;
+    }
+  }
+}
+
+.quiz__intro {
+
+  h1 {
+    @include font (500, 32px, 1.12, $color-eclipse);
+    margin-bottom: 16px;
+  }
+
+  p {
+    @include font (400, 16px, 1.25, $color-eclipse);
+    opacity: 0.7;
+    margin-bottom: 81px;
+    max-width: 70%;
+  }
+
+  img {
+    margin-left: 10px;
+  }
+}
+
+.quiz__form {
+  background: $color-default-white;
+  height: 392px;
+  padding: 32px;
+  border-radius: 24px;
+
+  form,
+  fieldset {
+    display: flex;
+    height: 100%;
+    min-width: 100%;
+    overflow: hidden;
+  }
+}

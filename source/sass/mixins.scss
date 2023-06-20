@@ -1,3 +1,13 @@
+@mixin font ($fw, $fs, $lh, $color) {
+  font-family: $ff-onest;
+  font-style: normal;
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
+}
+
+
 @mixin retina {
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     @content;

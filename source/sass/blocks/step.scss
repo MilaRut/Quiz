@@ -1,0 +1,221 @@
+.step {
+  transform: scale(0.1);
+  opacity: 0;
+  transition: opacity $trans-modal,
+    display $trans-modal,
+    transform $trans-modal;
+}
+
+.step.is-active {
+  display: flex;
+  flex-direction: column;
+  transform: scale(1);
+  opacity: 1;
+  order: -1;
+  transition: opacity $trans-modal,
+    display $trans-modal,
+    transform $trans-modal;
+}
+
+.step__heading {
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    @include font (500, 16px, 1.25, $color-eclipse);
+    margin-bottom: 24px;
+  }
+
+  p {
+    @include font (400, 16px, 1.25, $color-nobel);
+    opacity: 0.3;
+  }
+}
+
+.step__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  input[type="radio"]+label {
+    @include font (400, 16px, 1.25, $color-eclipse);
+    position: relative;
+    display: block;
+    margin: 0 8px 8px 0;
+    padding: 18px 16px;
+    border-radius: 16px;
+    border: 1px solid $color-white-smoke;
+    background: $color-white-smoke;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      content: "";
+      right: 16px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $color-gainsboro;
+      border-radius: 50%;
+    }
+  }
+
+  &--1col {
+    input[type="radio"]+label {
+      width: 100%;
+    }
+  }
+
+  &--2col {
+    input[type="radio"]+label {
+      width: 248px;
+    }
+  }
+
+  &--select {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: url("../img/svg/arrow-dropdown.svg");
+      top: 18px;
+      right: 18px;
+      width: 20px;
+      height: 20px;
+      transition: all $trans-modal;
+    }
+
+    &.is-active {
+      &::after {
+        transform: scale(1, -1);
+        transition: all $trans-modal;
+      }
+    }
+
+    .select__options {
+      display: none;
+      transform: translateY(-300px);
+      transition: transform $trans-modal;
+    }
+
+    .select__options.is-active {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-height: 172px;
+      overflow: scroll;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      padding: 16px;
+      transform: none;
+      transition: transform $trans-modal;
+    }
+
+    input[type="text"][data-select] {
+      cursor: pointer;
+      background-color: $color-default-white;
+      border: 1px solid $color-eclipse;
+      padding: 25px 43px 10px 16px;
+    }
+
+    input[type="text"][data-select]+label {
+      @include font (400, 12px, 1, $color-nobel);
+      position: absolute;
+      top: 10px;
+      left: 16px;
+    }
+
+    input[type="checkbox"]+label {
+      @include font (400, 16px, 1.25, $color-eclipse);
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 12px;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $color-gainsboro;
+        border-radius: 4px;
+      }
+    }
+
+    input[type="checkbox"]:checked+label::before {
+      background: $color-eclipse url("../../img/svg/checkbox-mark.svg") center no-repeat;
+    }
+  }
+
+  input[type="radio"]:checked+label {
+    background-color: $color-default-white;
+    border: 1px solid $color-eclipse;
+  }
+
+  input[type="radio"]:checked+label::after {
+    background-color: $color-default-white;
+    border: 6px solid $color-eclipse;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    @include font (400, 16px, 1.25, $color-eclipse);
+    width: 100%;
+    background: $color-white-smoke;
+    border: none;
+    border-radius: 16px;
+    margin-bottom: 8px;
+    padding: 18px 16px;
+
+    &::placeholder {
+      color: $color-nobel;
+    }
+  }
+}
+
+.step__btns {
+  display: flex;
+  margin-top: auto;
+  justify-content: space-between;
+}
+
+.step:first-child {
+  .step__btns {
+    justify-content: flex-end;
+  }
+}
+
+.step__agreement {
+  @include font (400, 12px, 1.67, $color-nobel);
+
+  a {
+    color: $color-eclipse;
+    text-decoration: underline;
+    text-underline-offset: 1px;
+  }
+}
+
+.option {
+  @include font (400, 16px, 1.25, $color-eclipse);
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $color-gainsboro;
+    border-radius: 4px;
+  }
+}
+
+.option.checked {
+  &::before {
+    background: $color-eclipse url("../../img/svg/checkbox-mark.svg") center no-repeat;
+  }
+}

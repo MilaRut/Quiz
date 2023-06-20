@@ -15,8 +15,8 @@ html {
   font-style: normal;
   font-weight: 400;
   font-size: $fz-default;
-  line-height: 24px;
-  font-family: $ff-placeholder;
+  line-height: 20px;
+  font-family: $ff-onest;
   color: $color-default-black;
 
   -webkit-font-smoothing: antialiased;
@@ -34,6 +34,28 @@ body {
   background-color: $color-default-white;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 a {
   color: $color-default-black;
   text-decoration: none;
@@ -48,6 +70,12 @@ video {
 
 textarea {
   resize: none;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 // chrome autofill background removal
@@ -82,6 +110,7 @@ select {
 
 // ie11 X removal
 input {
+
   &::-ms-clear,
   &::-ms-reveal {
     display: none;
